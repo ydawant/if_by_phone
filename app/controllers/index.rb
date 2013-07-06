@@ -3,5 +3,5 @@ get '/' do
 end
 
 get '/phone_redirect' do
-	"you are being redirected"
+	"You are being redirected to #{params[:A1]}"
 end
