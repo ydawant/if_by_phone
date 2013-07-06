@@ -4,5 +4,5 @@ end
 
 get '/phone_redirect' do
 	"you are being redirected"
-	redirect_to 'http://www.google.com'
+	redirect 'https://www.google.com'
 end
