@@ -13,16 +13,12 @@ require 'geocoder'
 require 'uri'
 require 'pathname'
 
-require 'pg'
-require 'active_record'
 require 'logger'
 
 require 'sinatra'
 require "sinatra/reloader" if development?
 
-require 'faker'
 require 'erb'
-require 'bcrypt'
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
@@ -35,9 +31,6 @@ set :root, APP_ROOT
 Dir[APP_ROOT.join('app', 'uploaders', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
-
-# Set up the database and models
-require APP_ROOT.join('config', 'database')
 
 ForecastIO.configure do |configuration|
   configuration.api_key = 'dc7ba4be17e441310aafb5fa6419dc4d'
