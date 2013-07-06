@@ -7,6 +7,8 @@ require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 
 # Require gems we care about
 require 'rubygems'
+require 'forecast_io'
+require 'geocoder'
 
 require 'uri'
 require 'pathname'
@@ -36,3 +38,7 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+ForecastIO.configure do |configuration|
+  configuration.api_key = 'dc7ba4be17e441310aafb5fa6419dc4d'
+end

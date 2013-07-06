@@ -19,6 +19,8 @@ gem 'rake'
 
 gem 'shotgun'
 gem 'bcrypt-ruby'
+gem 'forecast_io'
+gem 'geocoder'
 # gem 'carrierwave'
 # gem "mini_magick"
 
